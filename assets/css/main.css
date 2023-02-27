@@ -6,7 +6,7 @@
 body{
     background-image: url("../img/rassvet.jpg");
     background-repeat: no-repeat;
-    background-size: auto;
+   background-repeat: round;
     /*font-family: OpenSans-Regular;*/
 }
 .div_search{

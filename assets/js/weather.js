@@ -47,9 +47,6 @@ function  SearchWeather(q) {
 //             saveAs(blob, "E:\\IT\\Проекты\\Weather\\response.json");
             //console.log(response.list);
 
-
-
-
             let first_day = new Date(response.list[0].dt_txt);
             first_day = first_day.getDate();
 
@@ -118,10 +115,10 @@ function  SearchWeather(q) {
           console.log(error.message);
           n++;
           let p = document.querySelector(".about");
-          p = "Данні були заванитеженні з JSON архиву на 27 Лютого, тому що GitHub блокує завантаження з API http://api.openweathermap.org";
+          p.innerHTML = " ©2023 ІТ Курси ITVDN, практична робота.   Данні були завантажені з JSON архиву на 27 Лютого, тому що GitHub блокує завантаження з API http://api.openweathermap.org";
           if (n<10) { //10 попыток иначе выход
               SearchWeather('assets/json/response.json');
-          }
+          } else {alert("Вибачте, помилка завантаження данних!")}
         }); // обработка исключений, например, проблем с сетью
 }
 //--------------table --------------
