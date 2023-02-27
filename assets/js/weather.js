@@ -8,6 +8,7 @@ let q = "Біла Церква";
 //let url1 = `http://api.openweathermap.org/data/2.5/forecast?q=${q}&appid=bf35cac91880cb98375230fb443a116f`;
 let list_class = [];
 let arrDays = [];
+let n = 0;
 //localStorage.setItem("t", "c");
 
 
@@ -115,9 +116,12 @@ function  SearchWeather(q) {
 
         .catch(error => {
           console.log(error.message);
+          n++;
           let p = document.querySelector(".about");
           p = "Данні були заванитеженні з JSON архиву на 27 Лютого, тому що GitHub блокує завантаження з API http://api.openweathermap.org";
-          SearchWeather('assets/json/response.json');
+          if (n<10) { //10 попыток иначе выход
+              SearchWeather('assets/json/response.json');
+          }
         }); // обработка исключений, например, проблем с сетью
 }
 //--------------table --------------
