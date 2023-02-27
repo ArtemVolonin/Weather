@@ -10,12 +10,17 @@ let list_class = [];
 let arrDays = [];
 //localStorage.setItem("t", "c");
 
+
 SearchWeather(q);
+//SearchWeather('assets/json/response.json');
 
 function  SearchWeather(q) {
-    let url1= `http://api.openweathermap.org/data/2.5/forecast?q=${q}&appid=bf35cac91880cb98375230fb443a116f`;
+    let url1;
+    if (q != 'assets/json/response.json') {
+         url1 = `http://api.openweathermap.org/data/2.5/forecast?q=${q}&appid=bf35cac91880cb98375230fb443a116f`;
+    } else { url1 = 'assets/json/response.json'; q = 'Біла Церква';}
     let promise = fetch(url1);
-     let header = document.querySelector("header");
+    let header = document.querySelector("header");
     // Удаляем все дочерние элементы div
     while (header.firstChild) {
         if (header.firstChild.tagName === 'DIV') {
@@ -24,13 +29,26 @@ function  SearchWeather(q) {
             header.removeChild(header.firstChild);
         }
     }
-     arrDays.length = 0;
-    list_class.length =0;
+    arrDays.length = 0;
+    list_class.length = 0;
 
     promise
         .then(response => response.json())
         .then(function (response) {
+// //Сохраняем файл JSON т.к. GITHUB блокирует запрос API
+//  Конвертируем объект в строку JSON
+//             const jsonString = JSON.stringify(response);
+//
+// // Создаем новый объект типа Blob из строки JSON
+//             const blob = new Blob([jsonString], { type: "application/json" });
+//
+// // Сохраняем файл с помощью FileSaver.js
+//             saveAs(blob, "E:\\IT\\Проекты\\Weather\\response.json");
             //console.log(response.list);
+
+
+
+
             let first_day = new Date(response.list[0].dt_txt);
             first_day = first_day.getDate();
 
@@ -61,8 +79,6 @@ function  SearchWeather(q) {
                     list_class.splice(0);
                     first_day = dt_data.getDate()
                 }
-
-
             }) // end foreach
 
 
@@ -76,9 +92,9 @@ function  SearchWeather(q) {
 
             //--------Главная картинка выбранного дня--------
             let main_img = document.querySelector(".big_img_main_day");
-           main_img.innerHTML = `<p class="p_city_day">${arrDays[0].city}</p>`;
+            main_img.innerHTML = `<p class="p_city_day">${arrDays[0].city}</p>`;
             main_img.innerHTML += `<p class="p_week_sel_day">${arrDays[0].day_weeks}</p>`;
-            main_img.innerHTML += arrDays[0].get_img_time(12,'big');
+            main_img.innerHTML += arrDays[0].get_img_time(12, 'big');
 
 
             //-----Главная таблица -------------------
@@ -96,9 +112,14 @@ function  SearchWeather(q) {
 
 
         }) // end response
-}
-// .catch(error => console.log(error.message)); // обработка исключений, например, проблем с сетью
 
+        .catch(error => {
+          console.log(error.message);
+          let p = document.querySelector(".about");
+          p = "Данні були заванитеженні з JSON архиву на 27 Лютого, тому що GitHub блокує завантаження з API http://api.openweathermap.org";
+          SearchWeather('assets/json/response.json');
+        }); // обработка исключений, например, проблем с сетью
+}
 //--------------table --------------
 
 

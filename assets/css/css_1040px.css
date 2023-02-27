@@ -1,0 +1,29 @@
+@media(max-width:1040px){
+body{
+    font-size: 14px;
+}
+    td,th{
+        font-size: 12px;
+        min-width: 50px;
+    }
+    .main_div{
+        width: 700px;
+        box-sizing: border-box;
+        margin: auto;
+        margin-top: 15px;
+        border-radius: 15px;
+        padding: 10px;
+        margin-bottom: 100px;
+    }
+    .div_day{
+        padding: 10px;
+        font-size: 14px;
+    }
+    .img_temp_f_1200, .img_temp_c_1200{
+        display: block;
+    }
+
+    header {
+        margin: auto;
+    }
+}

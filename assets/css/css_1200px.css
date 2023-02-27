@@ -1,0 +1,17 @@
+@media(max-width:1200px){
+    .temp_c, temp_f,.big_img_main_day{
+        display: none;
+    }
+    .img_temp_f_1200, .img_temp_c_1200{
+        display: block;
+    }
+
+    .main_div{
+        width: 1000px;
+        margin-top: 40px;
+        padding: 15px;
+        margin-bottom: 150px;
+    }
+
+
+}

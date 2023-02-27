@@ -76,7 +76,7 @@ body{
     cursor: pointer;
 }
 header{
-    margin-left: 65px;
+    margin-left: 93px;
    /* height: 300px;*/
    /* width: 100%;*/
    display: flex;
@@ -168,4 +168,31 @@ t_min_max{
 }
 .img_temp_selected{
     box-shadow: 10px 10px 10px orange;
+}
+.img_temp_f_1200, .img_temp_c_1200{
+    display: none;
+}
+footer{
+    display: flex;
+    background-color: #3b4750;
+    height: 50px;
+    color: white;
+    box-shadow: 10px 10px 10px gray;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: 'Roboto',sans-serif;
+    padding: 20px;
+}
+.soc_seti{
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+}
+.btn_soc{
+    cursor: pointer;
+    margin: 10px;
+}
+.about{
+    margin:auto;
+    text-align: center;
 }

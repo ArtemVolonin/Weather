@@ -5,11 +5,13 @@
     <title>Weather</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/css_1200px.css">
+    <link rel="stylesheet" href="assets/css/css_1040px.css">
 </head>
 <body>
 <div class="main_div">
     <div class="div_search">
-        <input type="search" class="search_text" size="80%" value="Белая Церковь"> <button class="btn_search" >Пошук</button>
+        <input type="search" class="search_text" size="80%" value="Біла Церква"> <button class="btn_search" >Пошук</button>
     </div>
     <div class="temps_days">
             <div class="temp_c">
@@ -31,7 +33,28 @@
         </div>
 
     </div>
+    <div class="temps_days">
+    <div class="temp_c">
+        <img class="img_temp_c_1200" src="assets/img/temp_c.png" alt="temp_c">
+    </div>
+    <div class="temp_c">
+        <img class="img_temp_f_1200" src="assets/img/temp_f.png" alt="temp_f">
+    </div>
+    </div>
+ <footer>
+     <div class="soc_seti">
+         <div class="btn_soc"><img src="./assets/img/soc/facebook.png" alt="facebook"></div>
+         <div class="btn_soc"><img src="./assets/img/soc/-youtube.png" alt="youtube"></div>
+         <div class="btn_soc"><img src="./assets/img/soc/instagram.png" alt="instagram"></div>
+         <div class="btn_soc"><img src="./assets/img/soc/twitter.png" alt="twitter"></div>
+     </div>
+     <div class="about">
+     <p>©2023 ІТ Курси ITVDN, практична робота. Данні завантаженні з API http://api.openweathermap.org </p>
+     </div>
+ </footer>
 </div>
 <script src="assets/js/weather.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
 </body>
 </html>
