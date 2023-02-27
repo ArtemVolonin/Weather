@@ -17,11 +17,12 @@ SearchWeather(q);
 
 function  SearchWeather(q) {
     if (!q){q = "Біла Церква";}
+    let p = document.querySelector(".about p");
     let url1;
     if (q != 'assets/json/response.json') {
          url1 = `http://api.openweathermap.org/data/2.5/forecast?q=${q}&appid=bf35cac91880cb98375230fb443a116f`;
+          p.innerHTML = "Данні завантажені з API http://api.openweathermap.org";
     } else { url1 = 'assets/json/response.json'; q = 'Біла Церква';
-             let p = document.querySelector(".about p");
              p.innerHTML = "Данні були завантажені з JSON архиву на 27 Лютого, тому що іноді GitHub блокує завантаження з API http://api.openweathermap.org";
     }
     let promise = fetch(url1);
