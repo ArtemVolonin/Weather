@@ -12,8 +12,8 @@ let n = 0;
 //localStorage.setItem("t", "c");
 
 
-//SearchWeather(q);
-SearchWeather('assets/json/response.json');
+SearchWeather(q);
+//SearchWeather('assets/json/response.json');
 
 function  SearchWeather(q) {
     if (!q){q = "Біла Церква";}
