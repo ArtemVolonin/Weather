@@ -12,14 +12,18 @@ let n = 0;
 //localStorage.setItem("t", "c");
 
 
-SearchWeather(q);
-//SearchWeather('assets/json/response.json');
+//SearchWeather(q);
+SearchWeather('assets/json/response.json');
 
 function  SearchWeather(q) {
+    if (!q){q = "Біла Церква";}
     let url1;
     if (q != 'assets/json/response.json') {
          url1 = `http://api.openweathermap.org/data/2.5/forecast?q=${q}&appid=bf35cac91880cb98375230fb443a116f`;
-    } else { url1 = 'assets/json/response.json'; q = 'Біла Церква';}
+    } else { url1 = 'assets/json/response.json'; q = 'Біла Церква';
+             let p = document.querySelector(".about p");
+             p.innerHTML = "Данні були завантажені з JSON архиву на 27 Лютого, тому що іноді GitHub блокує завантаження з API http://api.openweathermap.org";
+    }
     let promise = fetch(url1);
     let header = document.querySelector("header");
     // Удаляем все дочерние элементы div
@@ -114,8 +118,8 @@ function  SearchWeather(q) {
         .catch(error => {
           console.log(error.message);
           n++;
-          let p = document.querySelector(".about");
-          p.innerHTML = " ©2023 ІТ Курси ITVDN, практична робота.   Данні були завантажені з JSON архиву на 27 Лютого, тому що GitHub блокує завантаження з API http://api.openweathermap.org";
+          let p = document.querySelector(".about p");
+          p.innerHTML = "Данні були завантажені з JSON архиву на 27 Лютого, тому що іноді GitHub блокує завантаження з API http://api.openweathermap.org";
           if (n<10) { //10 попыток иначе выход
               SearchWeather('assets/json/response.json');
           } else {alert("Вибачте, помилка завантаження данних!")}
