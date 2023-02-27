@@ -4,7 +4,7 @@
 // console.log(c.toLocaleDateString("en-GB"));
 // console.log(c.toLocaleTimeString("it-IT"));
 //https://api.openweathermap.org/data/2.5/onecall?lat=50.4333&lon=30.5167&&exclude=dailyl&.dt=1642550400&appid=bf35cac91880cb98375230fb443a116f
-let q = "Белая Церковь";
+let q = "Біла Церква";
 //let url1 = `http://api.openweathermap.org/data/2.5/forecast?q=${q}&appid=bf35cac91880cb98375230fb443a116f`;
 let list_class = [];
 let arrDays = [];

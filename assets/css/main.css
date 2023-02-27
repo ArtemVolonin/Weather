@@ -175,7 +175,7 @@ t_min_max{
 footer{
     display: flex;
     background-color: #3b4750;
-    height: 50px;
+    height: 40px;
     color: white;
     box-shadow: 10px 10px 10px gray;
     font-size: 12px;
