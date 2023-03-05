@@ -255,7 +255,7 @@ class Day {
                 img_day = `<img src="http://openweathermap.org/img/wn/${d.weather[0].icon}@2x.png"  class = "small_img" alt =${d.weather[0].icon} >`;
                 img_day = `<img src=assets/img/${d.weather[0].icon}.png  class = 'small_img' alt =${d.weather[0].icon} >`;
                 if (big == 'big') {
-                    img_day = `<img src=assets/img/${d.weather[0].icon}.png  class = 'big_img' alt =${d.weather[0].icon} >`;
+                    img_day = `<img src=assets/img/${d.weather[0].icon}.png  class = 'big_img shake-image' alt =${d.weather[0].icon} >`;
                 }
                 if (big == 'small') {
                     img_day = `<img src=assets/img/${d.weather[0].icon}.png  class = 'img_days' alt =${d.weather[0].icon} >`;
@@ -263,7 +263,7 @@ class Day {
             }
         }) // forech end
         if (img_day == '' && big == 'big') { // если time = null то выдать первую из массива картинку
-            img_day = `<img src=assets/img/${this.list_dt[0].weather[0].icon}.png  class = 'big_img' alt =${this.list_dt[0].weather[0].icon} >`;
+            img_day = `<img src=assets/img/${this.list_dt[0].weather[0].icon}.png  class = 'big_img shake-image' alt =${this.list_dt[0].weather[0].icon} >`;
         }
         if (img_day == '' && big == 'small') { // если time = null то выдать первую из массива картинку
             img_day = `<img src=assets/img/${this.list_dt[0].weather[0].icon}.png  class = 'img_days' alt =${this.list_dt[0].weather[0].icon} >`;

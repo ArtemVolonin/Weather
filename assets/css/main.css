@@ -67,13 +67,20 @@ body{
     display: flex;
 }
 .temp_c, .temp_f{
-    align-items: center;
+    /*align-items: center;*/
     width: 240px;
-    justify-content: center;
+    /*justify-content: center;*/
     margin: auto;
     text-align: center;
     padding: 10px;
     cursor: pointer;
+    /*transform: translate(50px, 100px);*/
+    animation: move 2s ease-in-out 0s forwards;
+}
+@keyframes move {
+    100% {
+        transform: translate(0, 50px);
+    }
 }
 header{
     margin-left: 93px;
@@ -126,6 +133,21 @@ t_min_max{
     justify-content: center;
     margin: auto;
 }
+.shake-image {
+    animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) 1;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-3px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(3px);
+    }
+}
 .day_weeks, .month_name_p{
     font-weight: bold;
     font-size: 17px;
@@ -172,7 +194,9 @@ t_min_max{
 }
 .img_temp_f_1200, .img_temp_c_1200{
     display: none;
+
 }
+
 footer{
     display: flex;
     background-color: #3b4750;
